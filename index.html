@@ -54,7 +54,7 @@ li.dropdown {
 }
 
 .wrapper {
- width:720px;
+ width:100%;
  overflow:hidden;
 }
 
@@ -74,7 +74,8 @@ li.dropdown {
 #slideshow
 {
     margin: 0 auto;
-    width: 150%;
+    width: 180%;
+    height: 20%;
     padding: 5px;
     border: 1px solid #CCCCCC;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px;
@@ -108,7 +109,8 @@ li.dropdown {
 
 #slider img
 {
-   width:100%;
+   width:648px;
+    height: 277px;
 }
 
 #slideshow figcaption
@@ -332,7 +334,7 @@ li.dropdown {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgb(214, 98, 13);
+    background-color: skyblue;
     height: 2px;
     animation: timeliner 32s infinite;
     -webkit-animation: timeliner 32s infinite;
@@ -393,7 +395,13 @@ li.dropdown {
         width: 100%;
     }
 }    
-    
+
+footer {
+    position:fixed;bottom:0;
+
+    width:100%;
+    display:block;
+}
     
 </style>
 </head>
@@ -445,20 +453,20 @@ li.dropdown {
     <div id="slideshow-container">
         <div id="slider">
             <figure>
-                <img src="http://placehold.it/350x150" alt="">
-                <figcaption>Style 1</figcaption>
+                <img src="images/sd1.png" alt="">
+                <figcaption>Dansk, Matematik og mange andre fag. Tjek de seneste dokumenter her!</figcaption>
             </figure>
             <figure>
-                <img src="http://placehold.it/350x150" alt="">
-                <figcaption>Style 2</figcaption>
+                <img src="images/messenger-school-bag-khaki-messenger-shoulder-bag.jpg" alt="">
+                <figcaption>Red din ryg og tag færre bøger med</figcaption>
             </figure>
             <figure>
-                <img src="http://placehold.it/350x150" alt="">
-                <figcaption>Style 3</figcaption>
+                <img src="images/TWITTER-1.jpg" alt="">
+                <figcaption>Læs nyheder og opdateringer på vores Twitter!</figcaption>
             </figure>
             <figure>
-                <img src="http://placehold.it/350x150" alt="">
-                <figcaption>Style 4</figcaption>
+                <img src="images/website-under-construction_8329.jpg" alt="">
+                <figcaption>Hjemmesiden er under opbygning</figcaption>
             </figure>
         </div>
         <span id="timeline"></span>
@@ -470,6 +478,9 @@ li.dropdown {
         <a href="https://twitter.com/GP_Database" class="twitter-follow-button" data-show-count="false">Follow @GP_Database</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>        
 </div>
+<footer>
+    <p>© MAXY - GP-DATABASE 2017</p>
+</footer>
 
 </body>
 </html>
