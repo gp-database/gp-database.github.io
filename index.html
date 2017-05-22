@@ -1,7 +1,475 @@
+<!DOCTYPE html>
 <html>
 <head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: skyblue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.wrapper {
+ width:720px;
+ overflow:hidden;
+}
+
+.left {
+ width:360px;
+ float:left;
+}
+
+.right {
+ width:360px;
+ float:right;
+}
+
+    
+/* SLIDESHOW */
+
+#slideshow
+{
+    margin: 0 auto;
+    width: 150%;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 7px;
+}
+
+#slideshow-container
+{
+    position: relative;
+    overflow: hidden;
+}
+
+#slider
+{
+    position: relative;
+    width: 500%;
+    animation: 32s slider infinite;
+    -webkit-animation: 32s slider infinite;
+    -moz-animation: 32s slider infinite;
+    -o-animation: 32s slider infinite;
+}
+
+#slider figure
+{
+    position: relative;
+    margin: 0;
+    width: 20%;
+    float: left;
+}
+
+#slider img
+{
+   width:100%;
+}
+
+#slideshow figcaption
+{
+    position:absolute;
+    padding: 20px 20px; margin:0;
+    left:0; right:0; bottom: 5px;
+    text-align:center;
+    letter-spacing: 0.05em;
+    word-spacing: 0.05em;
+    font-family: Georgia, Times, serif;
+    background: #000;
+    background: rgba(255,255,255,0.7);
+    border-top: 1px solid rgb(225,225,225);
+    color: #555;
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
+
+    -webkit-animation: figcaptionner 32s infinite;
+    -moz-animation: figcaptionner 32s infinite;
+    animation: figcaptionner 32s infinite;
+}
+
+/* Slider animation */
+
+@keyframes slider
+{
+    0%
+    {
+        left: 0;
+    }
+
+    20%
+    {
+        left: 0;
+    }
+
+    25%
+    {
+        left: -100%;
+    }
+
+    45%
+    {
+        left: -100%;
+    }
+
+    50%
+    {
+        left: -200%;
+    }
+
+    70%
+    {
+        left: -200%;
+    }
+
+    75%
+    {
+        left: -300%;
+    }
+
+    95%
+    {
+        left: -300%;
+    }
+
+    100%
+    {
+        left: 0%;
+    }
+}
+
+@-webkit-keyframes slider
+{
+    0%
+    {
+        left: 0;
+    }
+
+    20%
+    {
+        left: 0;
+    }
+
+    25%
+    {
+        left: -100%;
+    }
+
+    45%
+    {
+        left: -100%;
+    }
+
+    50%
+    {
+        left: -200%;
+    }
+
+    70%
+    {
+        left: -200%;
+    }
+
+    75%
+    {
+        left: -300%;
+    }
+
+    95%
+    {
+        left: -300%;
+    }
+
+    100%
+    {
+        left: 0%;
+    }
+}
+
+@-moz-keyframes slider
+{
+    0%
+    {
+        left: 0;
+    }
+
+    20%
+    {
+        left: 0;
+    }
+
+    25%
+    {
+        left: -100%;
+    }
+
+    45%
+    {
+        left: -100%;
+    }
+
+    50%
+    {
+        left: -200%;
+    }
+
+    70%
+    {
+        left: -200%;
+    }
+
+    75%
+    {
+        left: -300%;
+    }
+
+    95%
+    {
+        left: -300%;
+    }
+
+    100%
+    {
+        left: 0%;
+    }
+}
+
+@-o-keyframes slider
+{
+    0%
+    {
+        left: 0;
+    }
+
+    20%
+    {
+        left: 0;
+    }
+
+    25%
+    {
+        left: -100%;
+    }
+
+    45%
+    {
+        left: -100%;
+    }
+
+    50%
+    {
+        left: -200%;
+    }
+
+    70%
+    {
+        left: -200%;
+    }
+
+    75%
+    {
+        left: -300%;
+    }
+
+    95%
+    {
+        left: -300%;
+    }
+
+    100%
+    {
+        left: 0%;
+    }
+}
+
+/* TIMELINE */
+
+#timeline
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(214, 98, 13);
+    height: 2px;
+    animation: timeliner 32s infinite;
+    -webkit-animation: timeliner 32s infinite;
+    -moz-animation: timeliner 32s infinite;
+    -o-animation: timeliner 32s infinite;
+}
+
+/* Timeline animation */
+
+@keyframes timeliner
+{
+    0%, 25%, 50%, 75%, 100%
+    {
+        width: 0;
+    }
+
+    20%, 45%, 70%, 95%
+    {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes timeliner
+{
+    0%, 25%, 50%, 75%, 100%
+    {
+        width: 0;
+    }
+
+    20%, 45%, 70%, 95%
+    {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes timeliner
+{
+    0%, 25%, 50%, 75%, 100%
+    {
+        width: 0;
+    }
+
+    20%, 45%, 70%, 95%
+    {
+        width: 100%;
+    }
+}
+
+@-o-keyframes timeliner
+{
+    0%, 25%, 50%, 75%, 100%
+    {
+        width: 0;
+    }
+
+    20%, 45%, 70%, 95%
+    {
+        width: 100%;
+    }
+}    
+    
+    
+</style>
 </head>
 <body>
-<p>hej</p>
+
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Dansk</a>
+    <div class="dropdown-content">
+      <a href="#">Notater</a>
+      <a href="#">Mapper</a>
+      <a href="#">Lektier</a>
+      <a href="#">Hjemmesider</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Matematik</a>
+    <div class="dropdown-content">
+      <a href="#">Notater</a>
+      <a href="#">Mapper</a>
+      <a href="#">Lektier</a>
+      <a href="#">Hjemmesider</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Biologi</a>
+    <div class="dropdown-content">
+      <a href="#">Notater</a>
+      <a href="#">Mapper</a>
+      <a href="#">Lektier</a>
+      <a href="#">Hjemmesider</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Fysik</a>
+    <div class="dropdown-content">
+      <a href="#">Notater</a>
+      <a href="#">Mapper</a>
+      <a href="#">Lektier</a>
+      <a href="#">Hjemmesider</a>
+    </div>
+  </li>
+</ul>
+
+<h3>Greve Privatskole - Database</h3>
+<div class="table">
+    <div class="left">
+        <div id="slideshow">
+    <div id="slideshow-container">
+        <div id="slider">
+            <figure>
+                <img src="http://placehold.it/350x150" alt="">
+                <figcaption>Style 1</figcaption>
+            </figure>
+            <figure>
+                <img src="http://placehold.it/350x150" alt="">
+                <figcaption>Style 2</figcaption>
+            </figure>
+            <figure>
+                <img src="http://placehold.it/350x150" alt="">
+                <figcaption>Style 3</figcaption>
+            </figure>
+            <figure>
+                <img src="http://placehold.it/350x150" alt="">
+                <figcaption>Style 4</figcaption>
+            </figure>
+        </div>
+        <span id="timeline"></span>
+    </div>
+</div>
+    </div>
+    <div class="right">   
+       <a class="twitter-timeline" href="https://twitter.com/GP_Database">Tweets by GP_Database</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://twitter.com/GP_Database" class="twitter-follow-button" data-show-count="false">Follow @GP_Database</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>        
+</div>
+
 </body>
 </html>
