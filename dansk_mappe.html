@@ -3,6 +3,8 @@
 <head>
     <link rel="icon" href="images/Database-300x300.png">
     <title>GP-Database</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
 <style>
 ul {
     list-style-type: none;
@@ -122,23 +124,40 @@ li.dropdown {
 
     }
 #folder div {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .folders {
   display: inline-block;
-  vertical-align: top;
-    float: left; 
-    margin: 10px 0px 30px 30px;
+    vertical-align: top;
+    margin: 10px 30px 30px 3px;
   text-align: center;
     
  }
 .ff {
     position: relative;
     top: -20px;
+    max-width: 100px;
 }
 
-
+input[type=text] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+    
+mark {
+  background: orange;
+  color: black;
+}
     
 </style>
 </head>
@@ -154,7 +173,7 @@ li.dropdown {
     <a href="javascript:void(0)" class="dropbtn">Dansk</a>
     <div class="dropdown-content">
       <a href="#">Notater</a>
-      <a href="#">Mapper</a>
+      <a href="dansk_mappe.html">Mapper</a>
       
       <a href="#">Hjemmesider</a>
     </div>
@@ -231,31 +250,47 @@ li.dropdown {
       <a href="#">Hjemmesider</a>
     </div>
   </li>
+  
 </ul>
 
 
 <div id="folder">
     <div class="folders">
-        <img src="images/Places-folder-green-icon.png" alt="Genremappe" />
-        <p class="ff">Genremappe</p>
+        <img src="images/green_folder.png" alt="Genremappe" />
+        <p class="ff" id="tes">Genremappe</p>
     </div>    
     <div class="folders">
-        <img src="images/Places-folder-green-icon.png" alt="Analysemodeller" />
-        <p class="ff">Analysemodeller</p>
+        <a href="pdf/Analysemodel.pdf" target="_blank"><img src="images/green_folder.png" alt="Analysemodeller" /></a>
+        <a href="pdf/Analysemodel.pdf" target="_blank"><p class="ff" id="tes">Analysemodeller</p></a>
     </div>  
     <div class="folders">
-        <img src="images/dcec0455c9ff542f4163e522f3de8f1b_download-png-icon-folder-png-clipart-yellow-folder_256-256.png" alt="Blandede" />
-        <p class="ff">Den blandede teksttype</p>
+        <a href="pdf/BlandedeTeksttype.pdf" target="_blank"><img src="images/yellow_folder.png" alt="Blandede" /></a>
+        <a href="pdf/BlandedeTeksttype.pdf" target="_blank"><p class="ff" id="tes">Den blandede teksttype</p></a>
     </div>  
     <div class="folders">
-        <img src="images/dcec0455c9ff542f4163e522f3de8f1b_download-png-icon-folder-png-clipart-yellow-folder_256-256.png" alt="Fremstilling" />
-        <p class="ff">Hjælp til skriftlig fremstilling </p>
-    </div>  
+        <img src="images/yellow_folder.png" alt="Fremstilling" />
+        <p class="ff" id="tes">Hjælp til skriftlig fremstilling </p>
+    </div> 
+    <div class="folders">
+        <img src="images/grey_folder.png" alt="Avis" />
+        <p class="ff" id="tes">Dansk Avis</p>
+    </div> 
+    <div class="folders">
+        <img src="images/purple_folder.png" alt="Projekt" />
+        <p class="ff" id="tes">Projekt mappe</p>
+    </div> 
+    
+    
+    
+    
 </div>
 
 
-
-
+  
 
 </body>
+
+
+
+
 </html>
